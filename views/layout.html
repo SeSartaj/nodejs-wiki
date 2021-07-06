@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Default Title {% endblock %}</title>
+
+    <style>
+
+        body {
+            margin: 0px;
+        }
+        header {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        header, main, footer {
+            padding: 10px;
+        }
+
+        footer, header{
+            background-color: lightgrey;
+        }
+
+        footer {
+            font-size:smaller;
+            font-weight: lighter;
+        }
+
+        .create_entry {
+            padding: 10px;
+            background-color: rgb(16, 207, 128);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header >
+        {% block header %}
+            <h2 >
+                <a href="/">Wiki</a>
+            </h2>
+            <form action="/wiki/search" method="get">
+                <input type="text" placeholder="Search Entry" name='q'>
+                <button type="submit">Search</button>
+            </form>
+            <div>
+                <a href="/create" class="create_entry">Create New Entry</a>
+                <a href="/random" style="padding: 10px; background-color:orange">Random Entry</a>
+            </div>
+        {% endblock %}
+    </header>
+
+    <main>
+        {% block main %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+            Built with nodejs, express and Nunjucks
+        {% endblock %}
+    </footer>
+</body>
+</html>

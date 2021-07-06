@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+{% block header %}
+{{ super() }}
+{% endblock %}
+
+
+{% block main %}
+
+{{ content | safe }}
+
+<br>
+<div style="text-align:right;">
+    <a href="/edit/{{ title }}" class="edit_button" >Edit this entry</a>
+</div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create New Entry
+{% endblock %}
+
+
+
+{% block main %}
+<style>
+
+    .create_page > *{
+        margin: 10px;
+        display: block;
+    }   
+
+</style>
+
+    <form action="/create" class="create_page" method="post">
+        <input type="text" placeholder="Title" name="title" > <br />
+        <textarea name="content" id="" cols="30" placeholder="Content of the entry" rows="10"></textarea>
+
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}
+
